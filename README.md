@@ -10,19 +10,28 @@ C:\Program Files (x86)\Git\bin;C:\Program Files (x86)\Heroku\ruby-1.9.2\bin
 
 I also had issues getting Foreman working. To fix this, I have to remove Foreman and install an older version. (I had to give ruby.exe admin rights for this to work.)
 > gem uninstall foreman
+
 > gem install foreman -v 0.61
 
 d) Now in the console navigate to the app folder (the one with server.js inside it) and type:
 > heroku login
 
 It will respond with:
+
 Enter your Heroku credentials.
-Email: zeke@example.com
+
+Email: xxxx@example.com
+
 Password:
+
 Could not find an existing public key.
+
 Would you like to generate one? [Yn]
+
 Generating new SSH public key.
-Uploading ssh public key /Users/adam/.ssh/id_rsa.pub
+
+Uploading ssh public key /Users/xxxx/.ssh/id_rsa.pub
+
 
 If you didn't add the git bin path to your path environment variable, it will fail when it tries to generate the new key.
 
@@ -44,7 +53,9 @@ f) Then to push the app to Heroku, type:
 
 g) Now to get the app runnning, type:
 > heroku ps:scale web=1
+
 > heroku ps
+
 
 If you need to restart the app, type:
 > heroku restart
@@ -64,7 +75,11 @@ Navigate to test/client.php in your browser.
 
 b) local testing:
 
-Make sure the app is running by typing 'foreman start' in the console, or to run without Heroku, type 'node server.js'. Then navigate to test/client.php?local=1 in your browser.
+Make sure the app is running by typing:
+> foreman start
+in the console, or to run without Heroku, type:
+> node server.js
+Then navigate to http://localhost/APPNAME/test/client.php?local=1 in your browser.
 
 
 
