@@ -1,5 +1,6 @@
 
-var DEFAULT_PORT = process.env.PORT ||  8080;
+//var DEFAULT_PORT = process.env.PORT || 8080;
+var DEFAULT_PORT = 8080;
 var http = require('http');
 
 var server = http.createServer(createServer);
@@ -28,9 +29,9 @@ function createServer(request, response){
 
         });
     } else {
-        // method not allowed
-        response.writeHead(405, {"Content-Type": "text/plain"}).end();
-        request.connection.destroy();
+        response.writeHead(200, "OK", {"Content-Type": "text/plain"});
+        response.write('Only POST requests please!');
+        response.end();
     }
 
 }
@@ -76,13 +77,13 @@ function parseJsonData(data){
         for (var i = 0; i < payload.length; i++){
             var item = payload[i];
 
-            if (item.drm == undefined ||
-                item.episodeCount == undefined ||
+            if (item.drm === undefined ||
+                item.episodeCount === undefined ||
                 isNaN(item.episodeCount) ||
-                item.slug == undefined ||
-                item.title == undefined ||
-                item.image == undefined ||
-                item.image.showImage == undefined)
+                item.slug === undefined ||
+                item.title === undefined ||
+                item.image === undefined ||
+                item.image.showImage === undefined)
                 continue;
 
             if (item.drm === true && item.episodeCount > 0){
