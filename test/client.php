@@ -3,7 +3,7 @@
 require_once('SocketStream.php');
 
 define('LOCAL_HOST', 'localhost');
-define('LOCAL_PORT', 8080);
+define('LOCAL_PORT', 5000);
 define('REMOTE_HOST', 'fast-cliffs-8080.herokuapp.com');
 define('REMOTE_PORT', 80);
 define('DATA_FILE', dirname(__FILE__) . '/sample_request.json');

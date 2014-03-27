@@ -1,6 +1,5 @@
 
-//var DEFAULT_PORT = process.env.PORT || 8080;
-var DEFAULT_PORT = 8080;
+var DEFAULT_PORT = process.env.PORT || 5000;
 var http = require('http');
 
 var server = http.createServer(createServer);
