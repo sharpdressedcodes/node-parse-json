@@ -1,6 +1,5 @@
 
 var DEFAULT_PORT = 8080;
-//var fs = require('fs');
 var http = require('http');
 
 var server = http.createServer(createServer);
