@@ -77,8 +77,11 @@ b) local testing:
 
 Make sure the app is running by typing:
 > foreman start
+
 in the console, or to run without Heroku, type:
+
 > node server.js
+
 Then navigate to http://localhost/APPNAME/test/client.php?local=1 in your browser.
 
 
