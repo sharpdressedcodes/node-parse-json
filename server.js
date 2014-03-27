@@ -1,5 +1,6 @@
 
 var DEFAULT_PORT = process.env.PORT || 5000;
+var gitHubUrl = 'https://github.com/sharpdressedcodes/node-parse-json';
 var http = require('http');
 
 var server = http.createServer(createServer);
@@ -28,9 +29,18 @@ function createServer(request, response){
 
         });
     } else {
-        response.writeHead(200, "OK", {"Content-Type": "text/plain"});
-        response.write('Only POST requests please!');
+
+        response.writeHead(302, {
+            'Location': gitHubUrl,
+            'Content-Type': 'text/html'
+        });
+        response.write(
+            '<html><head><title>302 Document Moved</title></head><body>' +
+            'This document has moved to <a href="' + gitHubUrl + '" title="Node Parse Json">' + gitHubUrl + '</a>' +
+            '</body></html>'
+        );
         response.end();
+
     }
 
 }
